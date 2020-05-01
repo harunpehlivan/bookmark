@@ -10,7 +10,9 @@
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/gulp test:client && NODE_ENV=test node_modules/.bin/gulp test:server",
     "prestart": "node_modules/.bin/gulp && node_modules/.bin/sequelize db:migrate",
-    "start": "node index.js"
+    "start": "node index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,8 @@
     "save": "^2.3.0",
     "sequelize": "^3.23.6",
     "sequelize-cli": "^2.4.0",
-    "winston": "^2.2.0"
+    "winston": "^2.2.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.8",
@@ -54,5 +57,6 @@
     "mocha": "^3.1.0",
     "node-mocks-http": "^1.5.4",
     "wiredep": "^4.0.0"
-  }
+  },
+  "snyk": true
 }
